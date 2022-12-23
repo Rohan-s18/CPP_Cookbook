@@ -1,4 +1,4 @@
-# CPP_Tutorial
+# C++ Cookbook
 ## Author: Rohan Singh
 This Directory contains source code for various C++ tutorials, for learning or brushing up on your C++ skills. There are various directories here for varying levels of prior C++ (or other programming language) skill levels.   
 These directories include:  
