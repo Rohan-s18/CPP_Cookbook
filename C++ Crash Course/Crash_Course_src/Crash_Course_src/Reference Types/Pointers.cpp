@@ -210,10 +210,13 @@ void pointers_demo(){
 }
 
 
-//Main method of the file
+//Main method of the file (Uncomment to Run)
+
+/*
 int main(){
     
     pointers_demo();
     
     return 0;
 }
+ */
