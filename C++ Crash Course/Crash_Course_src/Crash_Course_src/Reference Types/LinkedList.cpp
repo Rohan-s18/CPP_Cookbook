@@ -31,9 +31,49 @@ struct Node{
     
 };
 
+//  This method will demonstrate traversing through a LinkedList
+void traverse(){
+    
+    //Instantiating the Node objects
+    Node n1, n2, n3, n4, n5, n6;
+    
+    n1.name = "Rohan";
+    n2.name = "Alessandra";
+    n3.name = "Zoë";
+    n4.name = "Alden";
+    n5.name = "Emile";
+    n6.name = "Mariel";
+    
+    //In order to insert a node after the current, you will need to pass the reference to the next
+    n1.insert(&n2);
+    n2.insert(&n3);
+    n3.insert(&n4);
+    n4.insert(&n5);
+    n5.insert(&n6);
+    
+    //Creating a traversal node pointer that will start at the head of the LinkedList
+    Node* trav = &n1;
+    
+    int ct = 1;
+    while(trav){
+        //Printing the name
+        printf("The %dth node of the LinkedList is named: %s\n",ct,trav->name);
+
+        //Moving the traversal node to the next one
+        trav = trav->next;
+        
+        ct++;
+    }
+    
+    
+}
 
 //  This method is an extension of the main method
-void demo(){
+void ll_demo(){
+    
+    traverse();
+    
+    printf("\n");
     
 }
 
@@ -43,7 +83,7 @@ void demo(){
 int main(){
     
     //Runnning the demo method
-    demo();
+    ll_demo();
     
     return 0;
     
