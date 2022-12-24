@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B4D349AD2956714100B51ED4 /* arithmetic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4D349AC2956714100B51ED4 /* arithmetic.cpp */; };
+		B4D349B12956964800B51ED4 /* Pointers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4D349B02956964800B51ED4 /* Pointers.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		B4D3499B2956520200B51ED4 /* Crash_Course_src */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Crash_Course_src; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D349AC2956714100B51ED4 /* arithmetic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = arithmetic.cpp; sourceTree = "<group>"; };
+		B4D349B02956964800B51ED4 /* Pointers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pointers.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		B4D3499D2956520200B51ED4 /* Crash_Course_src */ = {
 			isa = PBXGroup;
 			children = (
+				B4D349AF2956961F00B51ED4 /* Reference Types */,
 				B4D349A6295667A000B51ED4 /* Introduction */,
 			);
 			path = Crash_Course_src;
@@ -68,6 +71,14 @@
 				B4D349AC2956714100B51ED4 /* arithmetic.cpp */,
 			);
 			path = Introduction;
+			sourceTree = "<group>";
+		};
+		B4D349AF2956961F00B51ED4 /* Reference Types */ = {
+			isa = PBXGroup;
+			children = (
+				B4D349B02956964800B51ED4 /* Pointers.cpp */,
+			);
+			path = "Reference Types";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4D349AD2956714100B51ED4 /* arithmetic.cpp in Sources */,
+				B4D349B12956964800B51ED4 /* Pointers.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

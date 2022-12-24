@@ -190,6 +190,7 @@ void demo(){
 
 
 // Main method of the file
+/*
 int main(){
     
     demo();
@@ -197,4 +198,5 @@ int main(){
     return 0;
     
 }
+ */
 
