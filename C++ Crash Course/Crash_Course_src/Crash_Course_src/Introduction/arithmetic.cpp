@@ -22,6 +22,21 @@ enum class Arithmetic_Operator{
     MODULO
 };
 
+//  Data Classes (structs)
+struct Course{
+    
+    //The data inside the struct
+    char *name;
+    char *code;
+    int credits;
+    
+    //The functions of the struct
+    void print_course(){
+        printf("%s: %s (%d Credits)\n",code,name,credits);
+    }
+    
+};
+
 //  Function to find the integer squareroot of a number
 int int_sqrt(int n){
     int i = 1;
@@ -53,7 +68,7 @@ void print_literal_ints(){
     unsigned long long d = 0xFFFFFFFFFFFFFFFF;
     
     //Printing the binary literal
-    printf("%d\n",a);
+    printf("\n%d\n",a);
     
     //Printing the octal literal
     printf("%d\n",b);
@@ -106,8 +121,9 @@ int operate(int a, int b, Arithmetic_Operator opr){
 }
 
 
-// Main method of the file
-int main(){
+
+//  This function is basically an extension of the main method
+void demo(){
     
     //Deckaring the variable
     int x = 49;
@@ -116,10 +132,10 @@ int main(){
     int y = int_sqrt(x);
     
     //Printing the value
-    printf("The Squareroot of %d is: %d\n",x,y);
+    printf("The Squareroot of %d is: %d\n\n",x,y);
     
     //Printing the value
-    printf("The Absolute Value of %d is %d\n",-67,abs_value(-67));
+    printf("The Absolute Value of %d is %d\n\n",-67,abs_value(-67));
     
     //Printing the int literals
     print_literal_ints();
@@ -148,7 +164,35 @@ int main(){
     //Using the Arithmetic Operators Enumeration Class
     Arithmetic_Operator operation = Arithmetic_Operator::ADD;
     int result = operate(10,20,operation);
-    printf("The result is: %d\n",result);
+    printf("The result is: %d\n\n",result);
+    
+    
+    //Using the Course Structs to store data entries for different courses and then using their print methods
+    Course java;
+    java.name = "Introduction to Java Programming";
+    java.code = "CSDS 132";
+    java.credits = 3;
+    
+    Course ds;
+    ds.name = "Introduction to Data Structures";
+    ds.code = "CSDS 233";
+    ds.credits = 4;
+    
+    Course os{"Introduction to Operating Systems","CSDS 338",4};
+    
+    java.print_course();
+    ds.print_course();
+    os.print_course();
+    
+    printf("\n");
+    
+}
+
+
+// Main method of the file
+int main(){
+    
+    demo();
     
     return 0;
     
