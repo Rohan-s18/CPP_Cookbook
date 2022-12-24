@@ -4,11 +4,23 @@
 //
 //  Created by Rohan Singh on 12/23/22.
 //
-//  This file is an introduction to simple arithmetic operations, functions and operators
+//  This file is an introduction to simple arithmetic operations, functions, operators, flow statements and enumerations
 //  In the introductory files, I will be using printf() instead of cout
 
+//  Imports
 #include <stdio.h>
 #include <cstdio>
+#include<array>
+
+
+//  Enumeration class for different arithmetic operations
+enum class Arithmetic_Operator{
+    ADD,
+    SUBTRACT,
+    MULTIPLY,
+    DIVIDE,
+    MODULO
+};
 
 //  Function to find the integer squareroot of a number
 int int_sqrt(int n){
@@ -55,6 +67,44 @@ void print_literal_ints(){
 }
 
 
+//  Function to calculate an arithmetic expression given a set of variables and an operator
+int operate(int a, int b, Arithmetic_Operator opr){
+    
+    // Using a switch-case statement
+    switch (opr) {
+            
+        //Given operator is ADD
+        case Arithmetic_Operator::ADD:{
+            return a + b;
+        }break;
+            
+        //Given operator is SUBTRACT
+        case Arithmetic_Operator::SUBTRACT:{
+            return a - b;
+        }break;
+            
+        //Given operator is MULTIPLY
+        case Arithmetic_Operator::MULTIPLY:{
+            return a * b;
+        }break;
+            
+        //Given operator is DIVIDE
+        case Arithmetic_Operator::DIVIDE:{
+            return a / b;
+        }break;
+            
+        //Given operator is MODULO
+        case Arithmetic_Operator::MODULO:{
+            return a % b;
+        }break;
+        
+        //Default
+        default:
+            return -1;
+    }
+    
+}
+
 
 // Main method of the file
 int main(){
@@ -74,6 +124,33 @@ int main(){
     //Printing the int literals
     print_literal_ints();
     
+    
+    //Printing the array
+    int arr[] = {1,3,5,7,9,0,8,6,4,2};
+    
+    //Getting the length of the array
+    size_t len = sizeof(arr)/sizeof(int);
+    
+    printf("\n");
+    
+    int ct = 1;
+    
+    //Using a for loop to iterate through an array
+    for(size_t i = 0; i < len; i++){
+        printf("The %zu-th element of the array is: %d\n",i+1,arr[i]);
+        
+        ct++;
+    }
+    
+    printf("\n");
+    
+    
+    //Using the Arithmetic Operators Enumeration Class
+    Arithmetic_Operator operation = Arithmetic_Operator::ADD;
+    int result = operate(10,20,operation);
+    printf("The result is: %d\n",result);
+    
     return 0;
+    
 }
 
