@@ -6,6 +6,7 @@ These directories include:
   - **C++ Crash Course:** This directory contains source code to learn C++ if you have previous experience with any programming language (Java or some other OOP language preferably).  
   - **Cool C++ Code:** This directory contains source code for more advanced C++ Projects.  
 
+## Contact
 If you have any feedback or suggestions, please contact me at:  
 rxs1182@case.edu  
 rohan.b.singh54@gmail.com  
