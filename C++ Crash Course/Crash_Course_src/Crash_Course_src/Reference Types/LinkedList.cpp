@@ -80,6 +80,7 @@ void ll_demo(){
 
 
 //  Main method (Uncomment to run)
+/*
 int main(){
     
     //Runnning the demo method
@@ -88,5 +89,6 @@ int main(){
     return 0;
     
 }
+ */
 
 

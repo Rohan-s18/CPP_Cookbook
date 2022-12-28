@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4885895295BE78200865959 /* allocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4885894295BE78200865959 /* allocation.cpp */; };
 		B4D349AD2956714100B51ED4 /* arithmetic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4D349AC2956714100B51ED4 /* arithmetic.cpp */; };
 		B4D349B12956964800B51ED4 /* Pointers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4D349B02956964800B51ED4 /* Pointers.cpp */; };
 		B4D349B429578C6200B51ED4 /* LinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4D349B229578C6200B51ED4 /* LinkedList.cpp */; };
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B4885894295BE78200865959 /* allocation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = allocation.cpp; sourceTree = "<group>"; };
 		B4D3499B2956520200B51ED4 /* Crash_Course_src */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Crash_Course_src; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D349AC2956714100B51ED4 /* arithmetic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = arithmetic.cpp; sourceTree = "<group>"; };
 		B4D349B02956964800B51ED4 /* Pointers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pointers.cpp; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4885893295BE75E00865959 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B4885894295BE78200865959 /* allocation.cpp */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		B4D349922956520200B51ED4 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +71,7 @@
 		B4D3499D2956520200B51ED4 /* Crash_Course_src */ = {
 			isa = PBXGroup;
 			children = (
+				B4885893295BE75E00865959 /* Objects */,
 				B4D349AF2956961F00B51ED4 /* Reference Types */,
 				B4D349A6295667A000B51ED4 /* Introduction */,
 			);
@@ -142,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4D349AD2956714100B51ED4 /* arithmetic.cpp in Sources */,
+				B4885895295BE78200865959 /* allocation.cpp in Sources */,
 				B4D349B429578C6200B51ED4 /* LinkedList.cpp in Sources */,
 				B4D349B12956964800B51ED4 /* Pointers.cpp in Sources */,
 			);
