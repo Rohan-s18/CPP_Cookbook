@@ -5,4 +5,6 @@ This directory contains source code to learn C++ if you have previous experience
 ## Contents 
 This directory contains source code in these given directories:  
   - **Introduction:** This is just a brief intro to C++ where you will learn about the data types, structs, methods and flow statements.  
-  - **Reference Types:** This is a brief introduction to pointers and references as well as their uses (like linkedlists).  
+  - **Reference Types:** This is a brief introduction to pointers and references as well as their uses (like linkedlists).   
+  - **Objects:** This directory contains source code to demonstrate object life-cycles in C++, how to Create Objects and how to use them to create useful Data Structures like LinkedLists.  
+  - **Exceptions:** This directory explains Exceptions in C++ and also how to handle them.  
