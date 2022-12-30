@@ -2,9 +2,9 @@
 //  LinkedList.cpp
 //  Crash_Course_src
 //
-//  Created by Rohan Singh on 12/24/22.
+//  Created by Rohan Singh on 12/30/22.
 //
-//  This code will illustrate to you how to make LinkedLists using Structs in C++
+//  This code will illustrate to you how to make LinkedLists using Classes in C++
 
 //  Imports
 #include <stdio.h>
@@ -12,14 +12,20 @@
 
 
 //  This Struct is a singly LinkedList :)
-struct Node{
-    
-    //The pointer to the next Node
-    Node* next;
-    
+class Node{
+    public:
+
     //The value stored in the Node
     char* name;
-    
+
+    //The pointer to the next Node
+    Node* next;
+
+    //Constructor
+    Node(char* name){
+        this->name = name;
+    }
+
     //This method will insert the new node after this one
     void insert(Node* new_node){
         //Setting the next of the new Node to 'this' node's next
@@ -35,24 +41,22 @@ struct Node{
 void traverse(){
     
     //Instantiating the Node objects
-    Node n1, n2, n3, n4, n5, n6;
-    
-    n1.name = "Rohan";
-    n2.name = "Alessandra";
-    n3.name = "Zoë";
-    n4.name = "Alden";
-    n5.name = "Emile";
-    n6.name = "Mariel";
+    Node* n1 = new Node("Rohan");
+    Node* n2 = new Node("Alessandra");
+    Node* n3 = new Node("Zoë");
+    Node* n4 = new Node("Emile");
+    Node* n5 = new Node("Alden");
+    Node* n6 = new Node("Mariel");
     
     //In order to insert a node after the current, you will need to pass the reference to the next
-    n1.insert(&n2);
-    n2.insert(&n3);
-    n3.insert(&n4);
-    n4.insert(&n5);
-    n5.insert(&n6);
+    n1->insert(n2);
+    n2->insert(n3);
+    n3->insert(n4);
+    n4->insert(n5);
+    n5->insert(n6);
     
     //Creating a traversal node pointer that will start at the head of the LinkedList
-    Node* trav = &n1;
+    Node* trav = n1;
     
     int ct = 1;
     while(trav){
