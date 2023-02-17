@@ -6,6 +6,8 @@
 
 using namespace std;
 
+#define MAX 100
+
 
 //  Class for Neural Networks
 class NeuralNetwork{
@@ -17,22 +19,38 @@ class NeuralNetwork{
     double* weights;
     int dim;
     double epsilon;
+    int max;
+    double target[];
 
     // Methods
     public:
     
-    NeuralNetwork(int dimensions, double eps){
+    NeuralNetwork(int dimensions, double eps, int max_elm, double outputs[]){
         this->dim = dimensions;
         weights = new double[this->dim];
         this->epsilon = eps;
+        this->max = max_elm;
+        this->target = outputs;
+
     }
 
-    int get_NN_output(double vec[]){
+    double get_output(double vec[]){
         double output = 0;
         for(int i = 0; i < dim; i++){
             output+=(this->weights[i])*(vec[i]);
         }
         return output;
+    }
+
+    double get_NN_output(double *vec[]){
+
+        double tse= 0;
+
+        for(int i = 0; i < this->max; i++){
+            tse+=((get_output(vec[i])-)*());
+        }
+
+        return tse/2;
     }
 
     int get_dimensions(){
@@ -60,6 +78,10 @@ class NeuralNetwork{
         this->weights = temp_weight;
     }
 
+    void get_TSE(double output){
+        
+    }
+
 
 };
 
@@ -78,7 +100,7 @@ int main(){
 
 void test(){
 
-    NeuralNetwork* NN = new NeuralNetwork(10,0.1);
+    NeuralNetwork* NN = new NeuralNetwork(10,0.1,20);
 
     NN->print_weights();
 
@@ -90,7 +112,7 @@ void test(){
 
     double input[] = {1.0,1.0,1.0,2.0,3.0,1.0,1.0,1.0,2.0,3.0};
 
-    cout<<NN->get_NN_output(input);
+    cout<<NN->get_output(input);
 
     cout<<"\n";
 
