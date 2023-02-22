@@ -21,17 +21,18 @@ class NeuralNetwork{
     double epsilon;
     int max;
     double* target;
+    int len;
 
     // Methods
     public:
     
-    NeuralNetwork(int dimensions, double eps, int max_elm, double outputs[]){
+    NeuralNetwork(int dimensions, double eps, int max_elm, double outputs[], int train_set_len){
         this->dim = dimensions;
         weights = new double[this->dim];
         this->epsilon = eps;
         this->max = max_elm;
         this->target = outputs;
-
+        this->len = train_set_len;
     }
 
     double get_output(double vec[]){
@@ -88,6 +89,23 @@ class NeuralNetwork{
         return tse/2;
     }
 
+    double* get_gradient(double *vec[]){
+        double gradient[this->get_dimensions()];
+        double *output = get_NN_output(vec);
+        for(int i = 0; i < this->get_dimensions(); i++){
+
+        }
+        return gradient;
+    }
+
+    void train(){
+
+    }
+
+    double* test(double* vec[]){
+
+        return NULL;
+    }
 
 };
 
@@ -108,7 +126,7 @@ void test(){
 
     double target[] = {0,0,0,0,0};
 
-    NeuralNetwork* NN = new NeuralNetwork(10,0.1,20,target);
+    NeuralNetwork* NN = new NeuralNetwork(10,0.1,20,target, 5);
 
     NN->print_weights();
 
