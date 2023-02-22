@@ -87,14 +87,36 @@ class LinearRegression{
     //Training function
     void train(int max_iter, double eps, double max_err){
 
+        //Assigning temporay variables
         double temp_weight, temp_bias, err;
+        double* temp_output;
+        double* gradient;
 
+        //Avoiding segmentation faults ;)
+        temp_output = (double*)malloc(sizeof(double)*this->dataset_length);
+        gradient = (double*)malloc(sizeof(double)*2);
+
+        //Iterating through till we hit the max iteration
         for(int i = 0; i < max_iter; i++){
 
+            //Getting the output
+            temp_output = this->get_output(temp_bias, temp_weight, this->dataset, this->dataset_length);
             
+            //Getting the error and gradient
+            err = get_mse(temp_output);
 
-            if(err <= max_err)
+            //Exiting the loop if the error for this combo is minimum
+            if(err <= max_err){
+                std::cout<<"Minimum Found!\n";
                 break;
+            }
+                
+
+            gradient = get_gradient(temp_output);
+
+            //Updating the bias and weight terms using gradient descent
+            temp_bias -= eps*gradient[0];
+            temp_weight -= eps*gradient[1];
 
         }
 
@@ -117,7 +139,7 @@ class LinearRegression{
 //  Main function for demonstraiton
 int main(){
 
-    std::cout<<"Hello World!\n\n";
+    std::cout<<"Hello World!"<<"\n\n";
 
     //Calling the demo function
     single_variable_demo();
