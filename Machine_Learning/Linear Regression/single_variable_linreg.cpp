@@ -27,12 +27,12 @@ class LinearRegression{
 
 
     //Helper function to get an array for all of the outputs
-    double* get_output(double temp_bias, double temp_weight){
-        double arr[dataset_length];
+    double* get_output(double temp_bias, double temp_weight, double set[], int len){
+        double arr[len];
 
         //Traversing through the input array
-        for(int i = 0; i < dataset_length; i++){
-            arr[i] = (dataset[i]*temp_weight) + temp_bias;
+        for(int i = 0; i < len; i++){
+            arr[i] = (set[i]*temp_weight) + temp_bias;
         }
 
         return arr;
@@ -47,6 +47,23 @@ class LinearRegression{
         
         mse /= dataset_length;
         return mse/2;
+    }
+
+    //Helper function to get the gradient (the gradient vector is an R^2 vector for bias and weight)
+    double* get_gradient(double output[]){
+        double gradient[2];
+
+        //Bias and Weight gradients
+        double bias_grad, weight_grad;
+
+        for(int i = 0; i < this->dataset_length; i++){
+            bias_grad += output[i] - this->target[i];
+            weight_grad += ((output[i] - this->target[i])*(this->dataset[i]));
+        }
+
+        gradient[0] = bias_grad;
+        gradient[1] = weight_grad;
+        return gradient;
     }
 
 
@@ -65,6 +82,32 @@ class LinearRegression{
         //Initializing the variables
         this->bias = 0;
         this->weight = 0;
+    }
+
+    //Training function
+    void train(int max_iter, double eps, double max_err){
+
+        double temp_weight, temp_bias, err;
+
+        for(int i = 0; i < max_iter; i++){
+
+            
+
+            if(err <= max_err)
+                break;
+
+        }
+
+        this->bias = temp_bias;
+        this->weight = weight;
+
+
+    }
+
+    //Prediction function for Single-Variable Linear Regression
+    double* predict(double test_set[], int test_len){
+        //Using the optimal values from training for the prediction
+        return this->get_output(this->bias,this->weight,test_set,test_len);
     }
 
 
