@@ -160,7 +160,7 @@ void single_variable_demo(){
 
 
     LinearRegression* demo = new LinearRegression(target,dataset,10);
-    demo->train(1000,0.1,1);
+    demo->train(100000,0.001,0.001);
 
     double input[10] = {10,11,12,13,14,15,16,17,18,19};
     double* output;
