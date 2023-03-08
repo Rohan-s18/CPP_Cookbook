@@ -76,25 +76,48 @@ void quick_sort(int arr[], int n){
 
 //  Using greedy algorithm 1
 int* algo_1(int t[], int x[], int n){
-    
-    return NULL;
+    int* table = (int*)malloc(sizeof(int)*n);
+    table = t;
+    quick_sort(table,n);
+    return table;
 }
 
 
 //  Using greedy algorithm 2
 int* algo_2(int t[], int x[], int n){
-    return NULL;
+    int* table = (int*)malloc(sizeof(int)*n);
+    for(int i = 0; i < n; i++)
+        table[i] = t[i]*x[i];
+    quick_sort(table,n);
+    return table;
 }
 
 
 //  Tester function to check the time taken for the recordings
 int test_time(int t[], int x[], int n){
-    return 0;
+    int total_time = 0;
+    int sum = 0;
+    for(int i = 0; i < n; i++){
+        if(t[i] == 2)
+    }
+    return total_time;
 }
 
 
 //  Main function
 int main(){
+    int t[] = {3,2,7};
+    int x[] = {3,4,8};
+    
+    int* solution_1 = (int*)malloc(3*sizeof(int));
+    int* solution_2 = (int*)malloc(3*sizeof(int));
+
+    solution_1 = algo_1(t,x,3);
+
+    solution_2 = algo_2(t,x,3);
+
+    std::cout<<"The time for greedy algorithm 1 is: "<<test_time(solution_1,x,3)<<"\n";
+    std::cout<<"The time for greedy algorithm 2 is: "<<test_time(solution_2,x,3)<<"\n";
 
     return 0;
 }
