@@ -244,20 +244,19 @@ class Sort{
 
 
 
-//  Using greedy algorithm 1
+//  Using greedy algorithm 1 (Optimal)
 int* algo_1(int t[], int x[], int n){
     Sort* sort = new Sort();
 
     //Soting the time in ascending order
     int* table = (int*)malloc(sizeof(int)*n);
     table = t;
-    sort->quick_sort(table,n);
-    sort->print_array(table,n);
+    sort->quick_sort(table,n);\
     return table;
 }
 
 
-//  Using greedy algorithm 2
+//  Using greedy algorithm 2 (Incorrect)
 int* algo_2(int t[], int x[], int n){
     Sort* sort = new Sort();
 
@@ -266,7 +265,6 @@ int* algo_2(int t[], int x[], int n){
     for(int i = 0; i < n; i++)
         table[i] = t[i]*x[i];
     sort->quick_sort(table,n);
-    sort->print_array(table,n);
     return table;
 }
 
@@ -290,6 +288,172 @@ int test_time(int t[], int n){
 }
 
 
+//  Tester function to check the time taken for the recordings
+int test_time_adv(int t[], int n){
+    int total_time = 0;
+    int sum = 0;
+    int x = 0;
+    for(int i = 0; i < n; i++){
+        sum+=t[i];
+        if(t[i] == 2)
+            x = 4;
+        else if(t[i] == 3)
+            x = 3;
+        else if(t[i] == 7)
+            x = 5;
+        else
+            x = 3;
+        total_time += (sum*x);
+    }
+    return total_time;
+}
+
+
+
+
+void demo(){
+    int x1[] = {2,3,7};
+    int x2[] = {2,7,3};
+    int x3[] = {3,2,7};
+    int x4[] = {3,7,2};
+    int x5[] = {7,3,2};
+    int x6[] = {7,2,3};
+
+    Sort* my_sort = new Sort();
+
+    my_sort->print_array(x1,3);
+    std::cout<<"The time taken is: "<<test_time(x1,3)<<"\n\n";
+
+    my_sort->print_array(x2,3);
+    std::cout<<"The time taken is: "<<test_time(x2,3)<<"\n\n";
+
+    my_sort->print_array(x3,3);
+    std::cout<<"The time taken is: "<<test_time(x3,3)<<"\n\n";
+
+    my_sort->print_array(x4,3);
+    std::cout<<"The time taken is: "<<test_time(x4,3)<<"\n\n";
+
+    my_sort->print_array(x5,3);
+    std::cout<<"The time taken is: "<<test_time(x5,3)<<"\n\n";
+
+    my_sort->print_array(x6,3);
+    std::cout<<"The time taken is: "<<test_time(x6,3)<<"\n\n";
+
+
+}
+
+
+void advanced_test(){
+
+    //All combinations
+    int x1[] = {2,3,7,8};
+    int x2[] = {2,3,8,7};
+    int x3[] = {2,7,3,8};
+    int x4[] = {2,7,8,3};
+    int x5[] = {2,8,3,7};
+    int x6[] = {2,8,7,3};
+
+    int x7[] = {3,2,7,8};
+    int x8[] = {3,2,8,7};
+    int x9[] = {3,7,2,8};
+    int x10[] = {3,7,8,2};
+    int x11[] = {3,8,2,7};
+    int x12[] = {3,8,7,2};
+
+    int x13[] = {7,2,3,8};
+    int x14[] = {7,2,8,3};
+    int x15[] = {7,3,2,8};
+    int x16[] = {7,3,8,2};
+    int x17[] = {7,8,2,3};
+    int x18[] = {7,8,3,2};
+
+    int x19[] = {8,2,3,7};
+    int x20[] = {8,2,3,7};
+    int x21[] = {8,3,2,7};
+    int x22[] = {8,3,7,2};
+    int x23[] = {8,7,2,3};
+    int x24[] = {8,7,3,2};
+
+
+    Sort* my_sort = new Sort();
+
+    my_sort->print_array(x1,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x1,4)<<"\n\n";
+
+    my_sort->print_array(x2,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x2,4)<<"\n\n";
+
+    my_sort->print_array(x3,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x3,4)<<"\n\n";
+
+    my_sort->print_array(x4,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x4,4)<<"\n\n";
+
+    my_sort->print_array(x5,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x5,4)<<"\n\n";
+
+    my_sort->print_array(x6,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x6,4)<<"\n\n";
+
+    my_sort->print_array(x7,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x7,4)<<"\n\n";
+
+    my_sort->print_array(x8,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x8,4)<<"\n\n";
+
+    my_sort->print_array(x9,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x9,4)<<"\n\n";
+
+    my_sort->print_array(x10,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x10,4)<<"\n\n";
+
+    my_sort->print_array(x11,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x11,4)<<"\n\n";
+
+    my_sort->print_array(x12,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x12,4)<<"\n\n";
+
+    my_sort->print_array(x13,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x13,4)<<"\n\n";
+
+    my_sort->print_array(x14,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x14,4)<<"\n\n";
+
+    my_sort->print_array(x15,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x15,4)<<"\n\n";
+
+    my_sort->print_array(x16,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x16,4)<<"\n\n";
+
+    my_sort->print_array(x17,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x17,4)<<"\n\n";
+
+    my_sort->print_array(x18,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x18,4)<<"\n\n";
+
+    my_sort->print_array(x19,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x19,4)<<"\n\n";
+
+    my_sort->print_array(x20,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x20,4)<<"\n\n";
+
+    my_sort->print_array(x21,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x21,4)<<"\n\n";
+
+    my_sort->print_array(x22,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x22,4)<<"\n\n";
+
+    my_sort->print_array(x23,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x23,4)<<"\n\n";
+
+    my_sort->print_array(x24,4);
+    std::cout<<"The time taken is: "<<test_time_adv(x24,4)<<"\n\n";
+
+
+
+}
+
+
 //  Main function
 int main(){
     int t[] = {3,2,7};
@@ -299,16 +463,13 @@ int main(){
     //int* solution_2 = (int*)malloc(3*sizeof(int));
 
     solution_1 = algo_1(t,x,3);
-
-    int solution_2[] = {7,3,2};
-
-    Sort* sort = new Sort();
-    sort->print_array(solution_2,3);
     
-
+    demo();
     
-    std::cout<<"The time for greedy algorithm 1 is: "<<test_time(solution_1,3)<<"\n";
-    std::cout<<"The time for greedy algorithm 2 is: "<<test_time(solution_2,3)<<"\n";
+    std::cout<<"\n\n\n";
+
+    advanced_test();
 
     return 0;
+
 }

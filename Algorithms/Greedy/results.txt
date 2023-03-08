@@ -1,0 +1,93 @@
+[2 3 7 ]
+The time taken is: 35
+
+[2 7 3 ]
+The time taken is: 53
+
+[3 2 7 ]
+The time taken is: 41
+
+[3 7 2 ]
+The time taken is: 67
+
+[7 3 2 ]
+The time taken is: 85
+
+[7 2 3 ]
+The time taken is: 79
+
+
+
+
+[2 3 7 8 ]
+The time taken is: 143
+
+[2 3 8 7 ]
+The time taken is: 162
+
+[2 7 3 8 ]
+The time taken is: 149
+
+[2 7 8 3 ]
+The time taken is: 164
+
+[2 8 3 7 ]
+The time taken is: 177
+
+[2 8 7 3 ]
+The time taken is: 183
+
+[3 2 7 8 ]
+The time taken is: 149
+
+[3 2 8 7 ]
+The time taken is: 168
+
+[3 7 2 8 ]
+The time taken is: 167
+
+[3 7 8 2 ]
+The time taken is: 193
+
+[3 8 2 7 ]
+The time taken is: 194
+
+[3 8 7 2 ]
+The time taken is: 212
+
+[7 2 3 8 ]
+The time taken is: 167
+
+[7 2 8 3 ]
+The time taken is: 182
+
+[7 3 2 8 ]
+The time taken is: 173
+
+[7 3 8 2 ]
+The time taken is: 199
+
+[7 8 2 3 ]
+The time taken is: 208
+
+[7 8 3 2 ]
+The time taken is: 214
+
+[8 2 3 7 ]
+The time taken is: 203
+
+[8 2 3 7 ]
+The time taken is: 203
+
+[8 3 2 7 ]
+The time taken is: 209
+
+[8 3 7 2 ]
+The time taken is: 227
+
+[8 7 2 3 ]
+The time taken is: 227
+
+[8 7 3 2 ]
+The time taken is: 233
+
