@@ -298,7 +298,7 @@ int test_time_adv(int t[], int n){
         if(t[i] == 2)
             x = 4;
         else if(t[i] == 3)
-            x = 3;
+            x = 0;  // = 3;
         else if(t[i] == 7)
             x = 5;
         else
