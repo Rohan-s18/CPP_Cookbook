@@ -10,6 +10,25 @@
 //  Make an optimal schedule for jobs high stress (takes 2 weeks) or low stress (takes 1 week)
 
 
+//  Helper Function to print out an array of chars
+void print_array_c(char arr[], int n){
+    std::cout<<"[";
+    for(int i = 0; i < n; i++){
+        std::cout<<arr[i]<<" ";
+    }
+    std::cout<<"]\n";
+}
+
+
+//  Helper Function to print out an array of ints
+void print_array(int arr[], int n){
+    std::cout<<"[";
+    for(int i = 0; i < n; i++){
+        std::cout<<arr[i]<<" ";
+    }
+    std::cout<<"]\n";
+}
+
 //  Method for planning the schedule
 int plan(int low_stress[], int high_stress[], char schedule[], int n){
     //Variable to check the total payoff
@@ -23,7 +42,7 @@ int plan(int low_stress[], int high_stress[], char schedule[], int n){
 
 
     //Choosing the base case optimal job
-    if(low_stress[index] < high_stres[index]){
+    if(low_stress[index] < high_stress[index]){
         schedule[index] = 'h';
         payoff+=high_stress[index];
         solution[index]+=high_stress[index];
@@ -44,7 +63,7 @@ int plan(int low_stress[], int high_stress[], char schedule[], int n){
         //When high stress is optimal
         if(high_stress[index] > low_stress[index] + solution[index-1]){
             //If the last week's job was low-stress
-            if(schedule[index-1] == 'c'){
+            if(schedule[index-1] == 'l'){
 
                 payoff-=low_stress[index-1];
                 payoff+=high_stress[index];
@@ -62,7 +81,7 @@ int plan(int low_stress[], int high_stress[], char schedule[], int n){
                 payoff-=high_stress[index-1];
                 payoff+=high_stress[index];
 
-                schedule[index-2] = 'c';
+                schedule[index-2] = 'l';
                 schedule[index-1] = 'x';
                 schedule[index] = 'h';
 
@@ -82,32 +101,31 @@ int plan(int low_stress[], int high_stress[], char schedule[], int n){
         index++;
     }
 
+    print_array(solution,n);
+
     return payoff;
 }
 
 
-//  Helper Function to print out an array of chars
-void print_array_c(char arr[], int n){
-    std::cout<<"[";
-    for(int i = 0; i < n; i++){
-        std::cout<<arr[i]<<" ";
-    }
-    std::cout<<"]\n";
-}
-
-
-//  Helper Function to print out an array of ints
-void print_array(int arr[], int n){
-    std::cout<<"[";
-    for(int i = 0; i < n; i++){
-        std::cout<<arr[i]<<" ";
-    }
-    std::cout<<"]\n";
-}
 
 
 //  Main Function
 int main(){
+    int h[] = {10,6,19,12,20,32,45,11,24,21};
+    int l[] = {2,5,34,2,6,7,9,10,34,12};
+
+    print_array(h,10);
+    print_array(l,10);
+
+    char sched[10];
+
+    int payoff = plan(l,h,sched,10);
+
+    std::cout<<"\n\nPlanning!!!\nThe payoff is:"<<payoff<<"\n";
+
+    print_array_c(sched,10);
+
+
 
     return 0;
 }
