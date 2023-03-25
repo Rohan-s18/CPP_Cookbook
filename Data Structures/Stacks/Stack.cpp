@@ -70,11 +70,12 @@ int main(){
     test->push(4);
     test->push(5);
 
+    //Testing the Pop method
     std::cout<<test->pop()<<" ";
     std::cout<<test->pop()<<" ";
     std::cout<<test->pop()<<" ";
     std::cout<<test->pop()<<" ";
-    std::cout<<test->pop()<<" ";
+    std::cout<<test->pop()<<" \n";
 
 
 
