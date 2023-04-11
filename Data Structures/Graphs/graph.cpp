@@ -82,7 +82,7 @@ class Graph{
     public:
 
     //  Function to add a Vertex to the graph
-    bool add(string v_name){
+    bool add_vertex(string v_name){
 
         //Returning false if the graph is full or the vertex already exists
         if(this->size >= MAXNODES || this->indexof(v_name) != -1){
@@ -97,6 +97,52 @@ class Graph{
         this->size++;
 
         return true;
+
+    }
+
+
+    //  Function to add an edge to the graph
+    bool add_edge(string from, string to, int cost){
+        int fromIndex = this->indexof(from);
+        int toindex = this->indexof(to);
+
+        if(fromIndex == -1 || toindex == -1){
+            return false;
+        }
+
+        Edge* itr = graph[fromIndex].adj_list;
+
+        if(itr == NULL){
+            itr = new Edge(toindex, fromIndex, cost);
+            return true;
+        }
+
+        while(itr->next != NULL){
+            if(graph[itr->toIndex].name == to){
+                return false;
+            }
+            itr = itr->next;
+        }
+
+        itr->next = new Edge(toindex, fromIndex, cost);
+
+        return true;
+
+    }
+
+
+    void printGraph(){
+        
+        for(int i = 0; i < this->size; i++){
+            std::cout<<graph[i].name<<": ";
+            
+            Edge* itr = graph[i].adj_list;
+            while(itr != NULL){
+                std::cout<<graph[itr->toIndex].name<<" -> ";
+            }
+
+            std::cout<<"\n";
+        }
 
     }
 
