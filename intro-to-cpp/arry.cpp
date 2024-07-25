@@ -24,4 +24,8 @@ int main(){
 	std::cout<<"we have "<<sizeof(nums)/sizeof(int)<<" numbers with us\n";
 
 	return 0;
+
 }
+
+
+
