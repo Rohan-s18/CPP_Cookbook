@@ -6,3 +6,6 @@ vscode
 
 a.out
 
+*.t
+
+__pycache__
